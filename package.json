@@ -1,0 +1,22 @@
+{
+  "name": "fleetsteruni",
+  "version": "1.0.0",
+  "description": "fleetster challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://hcuffy@github.com/hcuffy/fleetsterUni.git"
+  },
+  "author": "Henry Cuffy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hcuffy/fleetsterUni/issues"
+  },
+  "homepage": "https://github.com/hcuffy/fleetsterUni#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
