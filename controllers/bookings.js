@@ -1,7 +1,7 @@
 const Booking = require('../models/booking');
 
 
-exports.createLocalBooking = (req, res, next) => {
+exports.createBooking = (req, res, next) => {
   const {
     type,
     startDateTime,
@@ -29,6 +29,16 @@ exports.getBookings = (req, res, next) => {
   });
 }
 
+exports.getSingleBooking = (req, res, next) => {
+  const id = req.params.id;
+  Booking.findById({
+    _id: id
+  }, (err, data) => {
+    if (err)
+      return next(err)
+    res.send(data);
+  });
+}
 
 exports.updateBooking = (req, res, next) => {
   const id = req.params.id;
