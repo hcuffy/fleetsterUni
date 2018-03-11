@@ -3,12 +3,12 @@ const app = express();
 const User = require('../models/user');
 
 exports.createNewUser = (req, res, next) => {
+  const formData = JSON.parse(Object.keys(req.body)[0]);
   const {
     username,
     password
-  } = req.body;
+  } = formData;
 
-  res.send(req.body);
   User.findOne({
     username
   }, (err, user) => {
@@ -24,7 +24,8 @@ exports.createNewUser = (req, res, next) => {
       if (err) return next(err);
       req.login(newUser, (err) => {
         if (err) return next(err);
-        res.redirect('/bookings/bookDB');
+        res.sendStatus(200);
+        // res.redirect('/bookings/bookDB');
       })
     })
   });
