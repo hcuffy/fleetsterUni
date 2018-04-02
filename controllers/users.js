@@ -32,7 +32,9 @@ exports.createNewUser = (req, res, next) => {
 }
 
 exports.getLogout = (req, res, next) => {
+ console.log("test");
   req.session.destroy(function(err) {
-    res.redirect('/');
+      res.sendStatus(200);
   });
+
 }
