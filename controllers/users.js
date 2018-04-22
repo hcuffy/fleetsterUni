@@ -3,11 +3,14 @@ const app = express();
 const User = require('../models/user');
 
 exports.createNewUser = (req, res, next) => {
-  const formData = JSON.parse(Object.keys(req.body)[0]);
+const formData = req.body;
+
   const {
     username,
     password
   } = formData;
+  
+console.log(formData);
 
   User.findOne({
     username
