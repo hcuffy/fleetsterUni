@@ -7,6 +7,7 @@ require('../config/passport')(passport);
 
 router.get('/logout', userController.getLogout);
 router.post('/signup', userController.createNewUser);
+console.log('test');
 router.post('/signin', passport.authenticate('local', {
   successRedirect: '/bookings/bookDB',
   failureRedirect: '/users/signup'
