@@ -8,9 +8,7 @@ exports.createNewUser = (req, res, next) => {
     username,
     password
   } = req.body;
-
-console.log(username);
-
+  
   User.findOne({
     username
   }, (err, user) => {
