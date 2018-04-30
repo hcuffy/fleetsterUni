@@ -1,4 +1,7 @@
 const Booking = require('../models/booking');
+const TokenGenerator = require('uuid-token-generator');
+const tokgen2 = new TokenGenerator(256, TokenGenerator.BASE62);
+let token = tokgen2.generate();
 
 
 exports.createBooking = (req, res, next) => {
@@ -25,7 +28,7 @@ exports.getBookings = (req, res, next) => {
   Booking.find({}, (err, data) => {
     if (err)
       return next(err)
-    res.send(data);
+    res.send({data,token});
   });
 }
 
